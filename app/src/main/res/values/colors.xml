@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="idl_color_blue">#00468A</color>
+    <color name="idl_color_black">#000000</color>
+    <color name="idl_color_white">#FFFFFF</color>
+    <color name="idl_color_gray">#808080</color>
+    <color name="henkel_color_red">#B22222</color>
+    <color name="nivea_color_blue">#0000FF</color>
+
+</resources>

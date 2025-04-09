@@ -1,0 +1,35 @@
+<resources>
+
+    // Labels scandir
+    <string name="captured_id_title">Recognized Document</string>
+    <string name="error_title">Error Encountered</string>
+    <string name="rejected_document_not_supported_message">Document not supported. Try scanning another document</string>
+    <string name="rejected_document_timeout_message">Document capture failed. Make sure the document is well lit and free of glare. Alternatively, try scanning another document</string>
+
+    // label do sistema
+    <string name="app_name">Self Check-In</string>
+
+    // Label de identificação de cliente
+    <string name="id_client_nivea">NIVOUT</string>
+    <string name="id_client_henkel">HENOUT</string>
+
+    // Label dos botões
+    <string name="label_button_home_next">Avançar para Check-in</string>
+    <string name="label_button_confirm">Confirmar e Avançar</string>
+    <string name="label_button_try_again">Tentar novamente</string>
+    <string name="label_button_add_shipment">Adicionar Shipment</string>
+    <string name="label_button_finish">Encerrar e Avançar</string>
+    <string name="label_button_back_and_continue">Voltar e Continuar</string>
+
+    // Label das caixas de texto
+    <string name="label_cpf">CPF</string>
+    <string name="label_cnh">CNH</string>
+    <string name="label_type_document">Tipo do documento</string>
+    <string name="label_name">Nome</string>
+    <string name="label_nacionality">Nacionalidade</string>
+    <string name="label_transport">Transportadora</string>
+    <string name="label_plate">Placa do veículo</string>
+    <string name="label_Shipment">Shipment</string>
+    <string name="label_phone">Telefone</string>
+
+</resources>

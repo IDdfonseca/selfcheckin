@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/idl_color_white"
+    android:layout_height="match_parent"
+    tools:context=".IdentifyActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/idl_color_blue"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <!-- ScrollView para rolagem automática -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- LinearLayout para conter os componentes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:padding="10dp"
+            android:background="@drawable/fieldset_background">
+
+            <!-- ProgressBar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:max="100"
+                android:progress="0"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/custom_progressbar"/>
+
+            <!-- CPF -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_badge_32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cpf"
+                    android:height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/idl_color_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/label_cpf"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CNH -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_badge_32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cnh"
+                    android:height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/idl_color_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/label_cnh"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Type Document -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_contacts_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_type_document"
+                    android:height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/idl_color_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/label_type_document"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Type Document -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_contacts_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/idl_color_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/label_name"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Nacionality -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_contacts_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nacionality"
+                    android:height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/idl_color_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/label_nacionality"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/label_button_confirm"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:iconGravity="textStart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_try_again"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/label_button_try_again"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:iconGravity="textStart"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

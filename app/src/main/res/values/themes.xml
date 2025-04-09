@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SelfChecking" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/idl_color_blue</item>
+        <item name="colorPrimaryVariant">@color/idl_color_gray</item>
+        <item name="colorOnPrimary">@color/idl_color_white</item>
+
+        <!-- Cor secundária -->
+        <item name="colorSecondary">#03DAC5</item>
+
+
+        <item name="android:statusBarColor">@color/idl_color_blue</item>
+        <item name="android:navigationBarColor">@color/idl_color_blue</item>
+    </style>
+
+    <style name="Theme.SelfChecking" parent="Base.Theme.SelfChecking" />
+</resources>

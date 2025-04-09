@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.idlogistics.selfcheckin">
+    <application
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_idl"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_idl_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SelfChecking"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".IdCaptureActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".IdentifyActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".client_henkel.HenkelShipmentActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".client_henkel.HenkelShipmentConfirmActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".client_henkel.HenkelShipmentFinishActivity"
+            android:exported="true"/>
+    </application>
+</manifest>
