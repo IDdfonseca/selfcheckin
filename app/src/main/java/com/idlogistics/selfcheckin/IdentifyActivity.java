@@ -58,8 +58,8 @@ public class IdentifyActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.idl_logo_744_154) ;
         imageView.setLayoutParams(new Toolbar.LayoutParams(
-                500,
-                150,
+                350,
+                100,
                 Gravity.CENTER)
 
         ); // Centraliza a imagem na Toolbar
@@ -93,16 +93,23 @@ public class IdentifyActivity extends AppCompatActivity {
 
             sendData();
 
+            NotificationHelper.showTemporaryNotification(
+                    this,
+                    "Self Check-In",
+                    "Dados enviados com sucesso!",
+                    101
+            );
+
             // Criar um layout customize para o Toast
-            LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.toast_text));
+            //LayoutInflater inflater = getLayoutInflater();
+            //View layout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.toast_text));
 
             // Criar e personalizar o Toast
-            Toast toast = new Toast(getApplicationContext());
-            toast.setView(layout);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 20);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
+            //Toast toast = new Toast(getApplicationContext());
+            //toast.setView(layout);
+            //toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 20);
+            //toast.setDuration(Toast.LENGTH_SHORT);
+            //toast.show();
         });
 
         findViewById(R.id.button_try_again ).setOnClickListener(v -> {

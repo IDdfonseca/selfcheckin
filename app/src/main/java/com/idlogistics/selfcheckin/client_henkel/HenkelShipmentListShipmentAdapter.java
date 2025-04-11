@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.idlogistics.selfcheckin.NotificationHelper;
 import com.idlogistics.selfcheckin.R;
 import com.idlogistics.selfcheckin.api.ApiService;
 import com.idlogistics.selfcheckin.api.RetrofitClient;
@@ -142,7 +143,14 @@ public class HenkelShipmentListShipmentAdapter extends RecyclerView.Adapter<Henk
                         case "200":
 
                             response_action = true;
-                            Toast.makeText(context, responseModel.getMessage(), Toast.LENGTH_SHORT).show();
+
+                            NotificationHelper.showTemporaryNotification(
+                                context,
+                                "Self Check-In",
+                                responseModel.getMessage(),
+                                101
+                            );
+
                             break;
 
                         case "9000":

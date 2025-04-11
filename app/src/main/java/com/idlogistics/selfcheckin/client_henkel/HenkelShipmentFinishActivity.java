@@ -18,6 +18,8 @@ import com.idlogistics.selfcheckin.HomeActivity;
 import com.idlogistics.selfcheckin.R;
 import com.idlogistics.selfcheckin.api.ApiService;
 import com.idlogistics.selfcheckin.api.RetrofitClient;
+import com.idlogistics.selfcheckin.utils.PhoneMaskUtil;
+import com.idlogistics.selfcheckin.utils.PlacaMaskUtil;
 import com.idlogistics.selfcheckin.utils.ProgressBarUtil;
 
 import java.util.ArrayList;
@@ -39,13 +41,13 @@ public class HenkelShipmentFinishActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         // Usar a classe utilitária para iniciar a barra de progresso
-        ProgressBarUtil.startProgressBar(this, progressBar, HomeActivity.class, 10000); // 10 segundos
+        ProgressBarUtil.startProgressBar(this, progressBar, HomeActivity.class, 20000); // 20 segundos
 
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.logo_henkel_256_256);
         imageView.setLayoutParams(new Toolbar.LayoutParams(
-                450,
-                100,
+                230,
+                80,
                 Gravity.CENTER)
 
         ); // Centraliza a imagem na Toolbar
@@ -72,6 +74,10 @@ public class HenkelShipmentFinishActivity extends AppCompatActivity {
         EditText editText_Name = findViewById(R.id.driver_confirm_name);
         EditText editText_Phone = findViewById(R.id.driver_confirm_phone);
         EditText editText_Plate = findViewById(R.id.driver_confirm_plate);
+
+        //Aplica a mascara
+        PlacaMaskUtil.applyMask(editText_Plate);
+        PhoneMaskUtil.applyMask((EditText) editText_Phone);
 
         editText_CPF.setText(CPF);
         editText_Name.setText(name);

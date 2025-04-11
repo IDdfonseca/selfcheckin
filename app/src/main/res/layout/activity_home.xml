@@ -23,7 +23,7 @@
     <!-- ScrollView para rolagem automática -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -35,7 +35,8 @@
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="30dp"
             android:orientation="vertical"
-            android:padding="0dp">
+            android:padding="0dp"
+            android:gravity="center">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -57,12 +58,10 @@
                     <ImageView
                         android:id="@+id/logo_nivea"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:contentDescription="@string/app_name"
                         android:src="@drawable/logo_nivea_256_256"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="parent" />
+                        android:layout_gravity="center"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_client_nivea"
@@ -99,12 +98,10 @@
                     <ImageView
                         android:id="@+id/logo_henkel"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:contentDescription="@string/app_name"
                         android:src="@drawable/logo_henkel_256_256"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="parent" />
+                        android:layout_gravity="center"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_client_henkel"
@@ -123,8 +120,6 @@
 
         </LinearLayout>
 
-
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

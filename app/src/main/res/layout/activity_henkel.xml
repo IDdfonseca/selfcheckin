@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/idl_color_white"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".client_henkel.HenkelShipmentActivity">
+    android:background="@color/idl_color_white"
+    android:fitsSystemWindows="true">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
@@ -69,7 +68,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/idl_color_black"
                     android:clickable="false"
                     android:focusable="false"
@@ -92,7 +91,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/idl_color_black"
                     android:clickable="false"
                     android:focusable="false"
@@ -114,7 +113,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/idl_color_black"
                     android:clickable="false"
                     android:focusable="false"
@@ -136,7 +135,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:padding="12dp"
                     android:height="50dp"
                     android:textColor="@color/idl_color_black"
@@ -157,7 +156,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/idl_color_black"
                     android:hint="@string/label_phone"/>
 
@@ -177,7 +176,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/idl_color_black"
                     android:hint="@string/label_plate"/>
 
@@ -207,7 +206,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/idl_color_black"
                     android:hint="@string/label_Shipment"/>
 
@@ -221,11 +220,11 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/label_button_add_shipment"
                 android:textSize="16sp"
                 app:cornerRadius="8dp"
-                app:iconGravity="textStart"/>
+                app:iconGravity="textStart" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_finish"

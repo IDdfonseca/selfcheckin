@@ -1,6 +1,8 @@
 package com.idlogistics.selfcheckin;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
@@ -11,6 +13,9 @@ import android.widget.ImageView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -32,8 +37,8 @@ public class HomeActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.idl_logo_744_154) ;
         imageView.setLayoutParams(new Toolbar.LayoutParams(
-                500,
-                150,
+                350,
+                100,
                 Gravity.CENTER)
 
         ); // Centraliza a imagem na Toolbar
@@ -48,8 +53,12 @@ public class HomeActivity extends AppCompatActivity {
 
         btnClientNivea.setOnClickListener(v -> {
 
-            // Ação ao clicar no botão
-            Toast.makeText(this, "Clicou no Botão da Nivea", Toast.LENGTH_LONG ).show();
+            NotificationHelper.showTemporaryNotification(
+                this,
+                "Olá!",
+                "Clicou no Botão da Nivea",
+                101
+            );
         });
 
         //Encontra o botão no layout

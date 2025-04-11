@@ -14,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -24,6 +23,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.idlogistics.selfcheckin.GlobalData;
 import com.idlogistics.selfcheckin.HomeActivity;
+import com.idlogistics.selfcheckin.NotificationHelper;
 import com.idlogistics.selfcheckin.R;
 import com.idlogistics.selfcheckin.TransportItemAdapter;
 import com.idlogistics.selfcheckin.TransportRequestModel;
@@ -65,8 +65,8 @@ public class HenkelShipmentActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.logo_henkel_256_256) ;
         imageView.setLayoutParams(new Toolbar.LayoutParams(
-                450,
-                100,
+                230,
+                80,
                 Gravity.CENTER)
 
         ); // Centraliza a imagem na Toolbar
@@ -157,6 +157,9 @@ public class HenkelShipmentActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
+                    // Parar a contagem da barra de progresso
+                    ProgressBarUtil.stopProgressBar(progressBar);
+
                     // Ação quando "Sim" for clicado
                     Intent it = new Intent(getApplicationContext(), HenkelShipmentConfirmActivity.class);
                     it.putExtra("CPF", CPF);
@@ -174,7 +177,13 @@ public class HenkelShipmentActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
                     // Ação quando "Não" for clicado
-                    Toast.makeText(getApplicationContext(), "Operação cancelada!", Toast.LENGTH_SHORT).show();
+                    NotificationHelper.showTemporaryNotification(
+                            getApplicationContext(),
+                            "Self Check-In",
+                            "Operação cancelada!",
+                            101
+                    );
+
                     dialog.dismiss();
                 }
             });
@@ -270,14 +279,24 @@ public class HenkelShipmentActivity extends AppCompatActivity {
                     HenkelShipmentRequestModel responseModel = response.body();
                     String response_message = responseModel.getMessage();
 
-                    Toast.makeText(HenkelShipmentActivity.this, response_message, Toast.LENGTH_SHORT).show();
+                    NotificationHelper.showTemporaryNotification(
+                            getApplicationContext(),
+                            "Self Check-In",
+                            response_message,
+                            101
+                    );
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<HenkelShipmentRequestModel> call, @NonNull Throwable t) {
 
-                Toast.makeText(HenkelShipmentActivity.this, "Falha: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                NotificationHelper.showTemporaryNotification(
+                        getApplicationContext(),
+                        "Self Check-In",
+                        "Falha: " + t.getMessage(),
+                        101
+                );
             }
         });
     }

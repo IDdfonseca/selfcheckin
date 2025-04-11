@@ -4,6 +4,10 @@ import androidx.annotation.VisibleForTesting;
 
 import com.scandit.datacapture.core.capture.DataCaptureContext;
 import com.scandit.datacapture.core.source.Camera;
+import com.scandit.datacapture.core.source.CameraPosition;
+import com.scandit.datacapture.core.source.CameraSettings;
+import com.scandit.datacapture.core.source.FocusGestureStrategy;
+import com.scandit.datacapture.core.source.VideoResolution;
 import com.scandit.datacapture.id.capture.DriverLicense;
 import com.scandit.datacapture.id.capture.IdCapture;
 import com.scandit.datacapture.id.capture.IdCaptureDocument;
@@ -64,10 +68,20 @@ public final class DataCaptureManager {
          * the recommended settings for this mode.
          */
 
-        //CAMERA FRONTAL
-        //camera = Camera.getCamera(CameraPosition.USER_FACING, IdCapture.createRecommendedCameraSettings());
-        //
 
+        //CAMERA FRONTAL
+        //CameraSettings cameraSettings = new CameraSettings();
+        //cameraSettings.setPreferredResolution(VideoResolution.AUTO);
+
+        // Configuração do foco
+        //cameraSettings. setFocusGestureStrategy(FocusGestureStrategy.AUTO_ON_LOCATION);
+
+        // Configuração do zoom
+        //cameraSettings.setZoomFactor(3);
+
+        //camera = Camera.getCamera( CameraPosition.USER_FACING, cameraSettings);
+
+        //CAMERA TRAZEIRA
         camera = Camera.getDefaultCamera(IdCapture.createRecommendedCameraSettings());
 
         if (camera == null) {

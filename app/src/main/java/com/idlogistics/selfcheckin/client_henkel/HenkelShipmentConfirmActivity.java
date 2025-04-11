@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,9 +23,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.idlogistics.selfcheckin.GlobalData;
 import com.idlogistics.selfcheckin.HomeActivity;
+import com.idlogistics.selfcheckin.NotificationHelper;
 import com.idlogistics.selfcheckin.R;
 import com.idlogistics.selfcheckin.api.ApiService;
 import com.idlogistics.selfcheckin.api.RetrofitClient;
+import com.idlogistics.selfcheckin.utils.PhoneMaskUtil;
+import com.idlogistics.selfcheckin.utils.PlacaMaskUtil;
 import com.idlogistics.selfcheckin.utils.ProgressBarUtil;
 
 import java.util.ArrayList;
@@ -50,8 +52,8 @@ public class HenkelShipmentConfirmActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.logo_henkel_256_256) ;
         imageView.setLayoutParams(new Toolbar.LayoutParams(
-                450,
-                100,
+                230,
+                80,
                 Gravity.CENTER)
 
         ); // Centraliza a imagem na Toolbar
@@ -85,6 +87,10 @@ public class HenkelShipmentConfirmActivity extends AppCompatActivity {
         EditText editText_Name = findViewById(R.id.driver_confirm_name);
         EditText editText_Phone = findViewById(R.id.driver_confirm_phone);
         EditText editText_Plate = findViewById(R.id.driver_confirm_plate);
+
+        //Aplica a mascara
+        PlacaMaskUtil.applyMask(editText_Plate);
+        PhoneMaskUtil.applyMask((EditText) editText_Phone);
 
         editText_CPF.setText(CPF);
         editText_Name.setText(name);
@@ -122,9 +128,7 @@ public class HenkelShipmentConfirmActivity extends AppCompatActivity {
 
         btnBackContinue.setOnClickListener( v ->{
 
-            Toast.makeText(getApplicationContext(), "TESTE_BACK", Toast.LENGTH_SHORT).show();
             super.onBackPressed();
-
         });
 
         btnConfirm.setOnClickListener( v ->{
@@ -144,13 +148,15 @@ public class HenkelShipmentConfirmActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
+                    // Parar a contagem da barra de progresso
+                    ProgressBarUtil.stopProgressBar(progressBar);
+
                     // Ação quando "Sim" for clicado
                     Intent itcon = new Intent( getApplicationContext(), HenkelShipmentFinishActivity.class );
                     itcon.putExtra("CPF", R.id.driver_confirm_cpf);
                     itcon.putExtra("name", R.id.driver_confirm_name);
                     itcon.putExtra("plate", R.id.driver_confirm_plate);
                     itcon.putExtra("phone", R.id.driver_confirm_phone);
-                    ProgressBarUtil.stopProgressBar(progressBar);
                     startActivity(itcon);
                     dialog.dismiss();
                     finishAffinity();
@@ -162,8 +168,13 @@ public class HenkelShipmentConfirmActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    // Ação quando "Não" for clicado
-                    Toast.makeText(getApplicationContext(), "Operação cancelada!", Toast.LENGTH_SHORT).show();
+                    NotificationHelper.showTemporaryNotification(
+                            getApplicationContext(),
+                            "Self Check-In",
+                            "Operação cancelada!",
+                            101
+                    );
+
                     dialog.dismiss();
                 }
             });

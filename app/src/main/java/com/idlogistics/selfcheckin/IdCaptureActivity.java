@@ -60,8 +60,8 @@ public class IdCaptureActivity extends CameraPermissionActivity
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.idl_logo_744_154) ;
         imageView.setLayoutParams(new Toolbar.LayoutParams(
-                500,
-                150,
+                350,
+                100,
                 Gravity.CENTER)
 
         ); // Centraliza a imagem na Toolbar
